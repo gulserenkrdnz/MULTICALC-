@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Odev1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Odev1"
+    Shell.FlyoutBehavior="Flyout">
+
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical">
+                <Image Source="{Binding FlyoutIcon}" HeightRequest="60" WidthRequest="60" />
+                <Label Text="{Binding Title}" VerticalTextAlignment="Center" FontSize="Large" />
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Ana Sayfa"
+            Icon="anasayfa.png"
+            Route="MainPage">
+            <local:MainPage />
+        </ShellContent>
+
+        <ShellContent
+            Title="Kredi Hesaplama"
+            Icon="hesaplama.png"
+            Route="KrediHesaplama">
+            <local:KrediHesaplama />
+        </ShellContent>
+
+        <ShellContent
+            Title="Vücut Kitle Endeksi"
+            Icon="baskul.png"
+            Route="VucutKitleİndeksi">
+            <local:VucutKitleİndeksi />
+        </ShellContent>
+
+        <ShellContent
+            Title="Renk Seçici"
+            Icon="renk.png"
+            Route="RenkSecici">
+            <local:RenkSecici />
+        </ShellContent>
+
+        <ShellContent
+            Title="Yapılacaklar"
+            Icon="liste.png"
+            Route="Yapilacaklar">
+            <local:Yapilacaklar />
+        </ShellContent>
+    </FlyoutItem>
+    
+
+</Shell>

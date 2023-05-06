@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev1.RenkSecici"
+             Title="RenkSecici">
+    <StackLayout>
+        <Label Text="Kırmızı" />
+        <Slider x:Name="kirmiziSlider" Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged" />
+        <Label Text="Yeşil" />
+        <Slider x:Name="yesilSlider" Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged" />
+        <Label Text="Mavi" />
+        <Slider x:Name="maviSlider" Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged" />
+        <BoxView x:Name="renkKutusu" HeightRequest="100" />
+
+
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Frame Padding="40" BackgroundColor="white" CornerRadius="5">
+                <Label x:Name="renkEtiketi" TextColor="Black" FontSize="Medium" 
+               HeightRequest="40" WidthRequest="100">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLabelTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+        </StackLayout>
+
+
+        <Button Text="Randum" Clicked="OnRandomButtonClicked" HorizontalOptions="Center"  />
+
+
+    </StackLayout>
+
+    
+</ContentPage>

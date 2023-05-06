@@ -1,0 +1,42 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev1.Yapilacaklar"
+             Title="Yapilacaklar">
+    <StackLayout>
+        <ListView x:Name="taskList" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell BindingContextChanged="OnViewCellBindingContextChanged">
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding IsComplete}" VerticalOptions="Center" CheckedChanged="OnTaskChecked" />
+                            <Label Text="{Binding Description}" VerticalOptions="Center" />
+
+                            <ImageButton x:Name="editButton" Clicked="OnTaskTapped" WidthRequest="30" HeightRequest="30" HorizontalOptions="EndAndExpand">
+                                <ImageButton.Source>
+                                    <FileImageSource File="duzenle.png" />
+                                </ImageButton.Source>
+                            </ImageButton>
+
+                            <ImageButton Clicked="OnDeleteClicked" WidthRequest="30" HeightRequest="30">
+                                <ImageButton.Source>
+                                    <FileImageSource File="sil.png" />
+                                </ImageButton.Source>
+                            </ImageButton>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        
+        
+        <StackLayout Orientation="Horizontal">
+            <ImageButton x:Name="ekleButton" WidthRequest="40" HeightRequest="40"  Clicked="OnAddClicked" HorizontalOptions="EndAndExpand" >
+                <ImageButton.Source>
+                    <FileImageSource File="ekleme.png" />
+                </ImageButton.Source>
+            
+             </ImageButton>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

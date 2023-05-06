@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="Odev1.VucutKitleİndeksi"
+          Title="VucutKitleİndeksi">
+    <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Vertical" >
+                <Label Text="Boy (cm)" />
+                <Entry x:Name="boyEntry" Placeholder="Boyunuzu girin" Keyboard="Numeric" />
+                <Label Text="Kilo (kg)" />
+                <Entry x:Name="kiloEntry" Placeholder="Kilonuzu girin" Keyboard="Numeric" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Boy (cm)" />
+                <Slider x:Name="boySlider" Maximum="300" Minimum="100" ValueChanged="BoySlider_ValueChanged"/>
+                <Label Text="Kilo (kg)" />
+                <Slider x:Name="kiloSlider" Maximum="200" Minimum="20" ValueChanged="KiloSlider_ValueChanged"/>
+            <Button Text="Hesapla" Clicked="Hesapla_Clicked" />
+            <Label x:Name="sonucLabel" />
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

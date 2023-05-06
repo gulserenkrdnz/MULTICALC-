@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Odev1.KrediHesaplama"
+             Title="KrediHesaplama">
+    <StackLayout>
+
+        <Picker x:Name="pickerKredi">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>İhtiyaç Kredisi</x:String>
+                    <x:String>Konut Kredisi</x:String>
+                    <x:String>Taşıt Kredisi</x:String>
+                    <x:String>Ticari Kredi</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Label Text="Kredi Miktarı" />
+        <Entry x:Name="txtKrediMiktari" Keyboard="Numeric" />
+        
+        <Label Text="Faiz Oranı (%)" />
+        <Entry x:Name="txtFaizOrani" Keyboard="Numeric" />
+        
+        <Label Text="Vade (Ay)" />
+        <Entry x:Name="selectedVade" Keyboard="Numeric" />
+        <Slider x:Name="sliderVade" Minimum="1" Maximum="60" ValueChanged="SliderVade_ValueChanged" />
+        <Label x:Name="labelVade" Text="Seçilen Vade: 1" />
+
+
+        <Button Text="Hesapla" Clicked="BtnHesapla_Clicked" />
+        <Label Text="Aylık Ödeme:" />
+        <Label x:Name="aylikOdemeLabel" />
+        <Label Text="Toplam Ödeme:" />
+        <Label x:Name="toplamOdemeLabel" />
+        <Label Text="Toplam Faiz:" />
+        <Label x:Name="toplamFaizLabel" />
+    </StackLayout>
+</ContentPage>
